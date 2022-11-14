@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>One User</title>
+</head>
+<body>
+
+<h2>User</h2>
+<table class="table table-dark">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Role</th>
+    <th scope="col">Actions</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+
+  <td th:text="${user.getId()}">Value</td>
+  <td th:text="${user.getUsername}">Value</td>
+  <td th:text="${user.getLastname()}">Value</td>
+  <td>
+    <form th:each="role: ${user.getRoles()}">
+      <p th:text="${role.getName()}">Value</p>
+    </form>
+  </td>
+  </tbody>
+</table>
+
+<br/>
+<br/>
+<a th:href="@{/logout}"><button>Logout</button></a></a>
+</body>
+</html>
