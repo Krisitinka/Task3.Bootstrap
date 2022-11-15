@@ -25,7 +25,7 @@ public class UserController {
     public String getUserHomePage(Authentication authentication, Model model) {
         User user = userService.findByEmail(authentication.getName());
         model.addAttribute("user", user);
-        return "userViews/getUser";
+        return "userPanel";
     }
 
 
